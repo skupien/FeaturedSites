@@ -88,3 +88,6 @@ Działa analogicznie do **findFeaturedSites**, ale wyszukuje dla wybranego użyt
 ## MonGui.java
 Klasa odpowiedzialna za GUI.
 
+Otwiera okno wyświetlające kolekcje przechowywanych osób oraz stron, umożliwia umieszczenie nowej osoby w bazie przy pomocy odpowiedniego interfejsu, wyświetla szczegółowe informacje o osobie bądź stronie i pozwala na utrzymanie listy przyporządkowania osób do stron, bądź różnych stron dla jednej konkretnej osoby.
+Dokładność przydzielenia danej osobie strony jest regulowana, by umożliwić uzyskanie dobrego odzwierciedlenia poglądów osoby z oczekiwanym profilem klienta strony.
+
