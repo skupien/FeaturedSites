@@ -1,4 +1,5 @@
 # FeaturedSites
+Wykonanie: **Jakub Margol, Patryk Skupień** <br><br>
 Mini-projekt na przedmiot Bazy Danych 2020.
 Dokumentowa baza danych oparta na technologii MongoDB, pisana w javie. GUI w oparciu o framework NetBeans. <br><br>
 Baza przechowuje wartości preferencje dla zapisanych osób oraz wylicza wartości dla nowo wprowadzonych osób
