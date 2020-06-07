@@ -78,11 +78,19 @@ Kod, który odpowiada za połączenie z bazą danych. Jej najważniejsze funkcje
 ### addUserWithFriends(String name, String surname, double age, String education, List<> friendsID)
 Funkcja przyjmuje podstawowe informacje nowego użytkownika oraz listę znajomych. Z listy znajomych funkcja zbiera dla każdej 
 osoby 4 pola poglądów oraz preferencji, wyliczając z poglądów średnią, a z sumy preferencji signum. Te wartości są przypisywane do nowego użytkownika.
+#### Działanie funkcji:
+Funkcja wywołuje prywatną funkcję **getFriendsOutput(List<> friends)**, która agreguje kolekcję użytkowników - wybiera tylko użytkowników, których ID znajduje się na liście, wylicza średnią ich czterech głównych osi - polityki, ekonomii, religijności oraz empatii, na sam koniec sumuje wszystkie pomniejsze preferencje, aby później obliczyć z niej signum. <br>
+Następnie główna funkcja dodaje użytkownika o podanych parametrach do kolekcji - cztery osie to zaokrąglony wynik metody getFriendsOutput, a pomniejsze preferencje to signum wyników metody getFriendsOutput. <br>
+
 ### findFeaturedSites(double radius)
 Funkcja znajduje dla każdej strony wszystkich użytkowników o podobnych poglądach. Wyliczana jest średnia z różnicy
 poglądów strony a pojedynczego użytkownika. Gdy róznica jest mniejsza od **radius**, użytkownik jest dodawany do mapy.
+#### Działanie funkcji:
+Funkcja zwraca mapę, gdzie ID strony to klucz, a wartość to mapa użytkowników (ID użytkownika klucz, wartość przypasowanie). <br>
+Funkcja na początku pobiera kolekcję stron, a następnie dla każdej z nich przechodzi po kolekcji wszystkich użykowników. Dla każdego z nich funkcja porównuje różnice 4. głównych osi między stroną a użytkownikiem, a następnie wylicza średnią, która nazywamy przypasowaniem. Jeśli przypasowanie jest mniejsze lub równe od przekazywanego argumentu **radius**, to dodajemy tego użytkownika do mapy. Proces ten powtarzamy dla każdej strony. <br>
+
 ### findFeaturedSitesForUser(ObjectId id, double radius)
-Działa analogicznie do **findFeaturedSites**, ale wyszukuje dla wybranego użytkownika.
+Działa analogicznie do **findFeaturedSites**, ale przeszukuje wszystkie strony dla wybranego użytkownika.
 
 
 ## MonGui.java
